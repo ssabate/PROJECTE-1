@@ -18,14 +18,17 @@ public class PROJECTE {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner ent= new Scanner(System.in);
-        String rasa;
-        int germans;
-        String color;
-        boolean sexe;
-        double pes;
+        Scanner entNum= new Scanner(System.in);
+        Scanner entText= new Scanner(System.in);
+        String rasa=null;
+        int germans=0;
+        String color=null;
+        boolean mascle=false;
+        boolean omplit = false;
+        char esmascle=' ';
+        double pes=0.0;
         //char tipo='';
-        
+        int opcio=10;
         do {
             System.out.println("\n\nmenu del programa.");
             System.out.println("0.Sortir.");
@@ -34,24 +37,32 @@ public class PROJECTE {
             System.out.println("3.Modificar gos.");
             System.out.println("Llistar gos.");
            
-            System.out.println("Introdueix la rasa:");
-            rasa=ent.next();
-            System.out.println("la raça és "+rasa);
+            System.out.println("tria una opcio;");
+            opcio = entNum.nextInt();
             
             switch (opcio) {
+                    
                 case 1:
                     if(!omplit){
+                        System.out.println("introdueix dades:");
                         System.out.println("Introdueix la rasa:");
-                        rasa=ent.nextLine();
+                        rasa=entText.nextLine();                 
+                        if (rasa=="labrador") System.out.println("Es labrador;");
+                        else System.out.println("No es labrador;");
+                        
                         System.out.println("Quants germans que té?:");
-                        germans=ent.nextInt();
+                        germans=entNum.nextInt();
                         System.out.println("De quin color es?:");
-                        color=ent.nextLine();
-                        System.out.println("Es mascle o femella?:");
-                        sexe=ent.nextBoolean();
+                        color=entText.nextLine();
                         System.out.println("Quin es el seu pes?:");
-                        pes=ent.nextDouble();
-                        omplit=true
+                        pes=entNum.nextDouble();
+                        System.out.println("Es mascle o femella? (M/F):");
+                        do{
+                            esmascle=entText.nextLine().toUpperCase().charAt(0);
+                        }while(esmascle !='m'&& esmascle !='F');
+                        mascle=(esmascle== 'M');
+                        
+                        omplit=true;
                                 
                     
                     
@@ -69,6 +80,7 @@ public class PROJECTE {
                 default:
                     throw new AssertionError();
             }
+        } while (opcio!=0);
     
     
     
