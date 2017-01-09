@@ -35,7 +35,7 @@ public class PROJECTE {
             System.out.println("1.Introduir gos.");
             System.out.println("2.Borrar gos");
             System.out.println("3.Modificar gos.");
-            System.out.println("Llistar gos.");
+            System.out.println("4.Llistar gos.");
            
             System.out.println("tria una opcio;");
             opcio = entNum.nextInt();
@@ -47,8 +47,8 @@ public class PROJECTE {
                         System.out.println("introdueix dades:");
                         System.out.println("Introdueix la rasa:");
                         rasa=entText.nextLine();                 
-                        if (rasa=="labrador") System.out.println("Es labrador;");
-                        else System.out.println("No es labrador;");
+//                        if (rasa=="labrador") System.out.println("Es labrador;");
+//                        else System.out.println("No es labrador;");
                         
                         System.out.println("Quants germans que té?:");
                         germans=entNum.nextInt();
@@ -63,18 +63,110 @@ public class PROJECTE {
                         mascle=(esmascle== 'M');
                         
                         omplit=true;
-                                
+                        break;       
                     
                     
                     }
                     
-                    
-                    
+                case 2:
                     if(!omplit){
-                        System.out.println("");
-                    }
+                        System.out.println("No hi ha dades, introdueix-ne:");
                         
+                    } else {
+                        System.out.println("Vols veure les dades del gos? (S/N)");
+                        char c=entText.nextLine().toUpperCase().charAt(0);
+                        if (c=='S'){
+                            System.out.println("Introdueix dades del gos:");
+                            System.out.println("Rasa: "+rasa);
+                            System.out.println("Germans: "+germans);
+                            System.out.println("Color: "+color);
+                            System.out.println("Pes:"+pes);
+                            if (esmascle=='M') System.out.println("És mascle");
+                            else System.out.println("És femella");
+                            
+                            System.out.println("\nVols borrar les dades? (S/N)");
+                            c=entText.nextLine().toUpperCase().charAt(0);
+                            if (c=='S'){
+                                rasa=" ";
+                                germans=0;
+                                color=" ";
+                                pes=0;
+                            }
+                            break;
+                            
+                        }
+                    }  
+                case 3:
+                    if(!omplit){
+                        System.out.println("No hi ha dades, introdueix-ne:");
                         
+                    } else {
+                        System.out.println("Vols veure les dades del gos? (S/N)");
+                        char c=entText.nextLine().toUpperCase().charAt(0);
+                        if (c=='S'){
+                            System.out.println("Rasa: "+rasa);
+                            System.out.println("Germans: "+germans);
+                            System.out.println("Color: "+color);
+                            System.out.println("Pes:"+pes);
+                            if (esmascle=='M') System.out.println("És mascle");
+                            else System.out.println("És femella");
+                            
+                            System.out.println("\nVols modificar les dades del gos? (S/N)");
+                            c=entText.nextLine().toUpperCase().charAt(0);
+                            if (c=='S'){
+                                System.out.println("Rasa: "+rasa);
+                                System.out.println("Vols modificar la rasa?");
+                                c=entText.nextLine().toUpperCase().charAt(0);
+                                if (c=='S'){
+                                    System.out.format("Nova rasa:");
+                                    rasa=entText.nextLine();                                    
+                                }
+                                System.out.println("Germans: "+germans);
+                                System.out.println("Vols modificar el nombre de germans? (S/N)");
+                                c=entText.nextLine().toUpperCase().charAt(0);
+                                if (c=='S'){
+                                    System.out.format("Nou nombre de germans:");
+                                    germans=entNum.nextInt();                                    
+                                }
+                                System.out.println("Color: "+color);
+                                System.out.println("Vols modificar el color:");
+                                c=entText.nextLine().toUpperCase().charAt(0);
+                                if (c=='S'){
+                                    System.out.format("Nou color:");
+                                    color=entText.nextLine();
+                                }
+                                System.out.println("pes: "+pes);
+                                System.out.println("Vols modificar el pes:");
+                                c=entText.nextLine().toUpperCase().charAt(0);
+                                if (c=='S'){
+                                    System.out.format("Nou pes:");
+                                    pes=entNum.nextInt();
+                                }
+                                
+                                if (esmascle=='M') System.out.println("És mascle");
+                                else System.out.println("És femella");
+                                
+                                System.out.println("Vols modificar gènere:");
+                                c=entText.nextLine().toUpperCase().charAt(0);
+                                if (c=='S'){
+                                    System.out.format("Nou gènere:");
+                                    do{
+                                        esmascle=entText.nextLine().toUpperCase().charAt(0);
+                                    }while(esmascle !='m'&& esmascle !='F');
+                                    mascle=(esmascle== 'M');
+                                }
+                                
+                            
+                            }
+                            break;
+                            
+                        }
+                    }  
+                case 4:
+                    System.out.println("Rasa: "+rasa);
+                    System.out.println("Germans: "+germans);
+                    System.out.println("Color: "+color);
+                    System.out.println("Pes:"+pes);
                         
                         break;
                 default:
