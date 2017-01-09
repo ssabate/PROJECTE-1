@@ -170,7 +170,8 @@ public class PROJECTE {
                         
                         break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("Adèu");
+                    break;
             }
         } while (opcio!=0);
     
