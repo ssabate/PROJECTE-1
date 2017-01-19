@@ -59,7 +59,7 @@ public class PROJECTE {
                         System.out.println("Es mascle o femella? (M/F):");
                         do{
                             esmascle=entText.nextLine().toUpperCase().charAt(0);
-                        }while(esmascle !='m'&& esmascle !='F');
+                        }while(esmascle !='M'&& esmascle !='F');
                         mascle=(esmascle== 'M');
                         
                         omplit=true;
